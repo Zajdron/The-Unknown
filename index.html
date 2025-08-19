@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje hádanková hra</title>
+</head>
+<body>
+    <h1>Vítej v hádankové hře!</h1>
+    <p>První hádanka: Co má 4 nohy ráno, 2 odpoledne a 3 večer?</p>
+    <input type="text" id="answer" placeholder="Napiš odpověď">
+    <button onclick="checkAnswer()">Odeslat</button>
+    <p id="feedback"></p>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase().trim();
+            const feedback = document.getElementById("feedback");
+
+            if (answer === "člověk") {
+                feedback.textContent = "Správně! Gratuluji!";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Špatně, zkus to znovu.";
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
